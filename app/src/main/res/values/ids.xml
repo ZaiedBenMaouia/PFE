@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="username_input_layout" type="id" />
+    <item name="password_input_layout" type="id" />
+    <item name="username_edit_text" type="id" />
+    <item name="phone_input_layout" type="id" />
+    <item name="btn_register" type="id" />
+    <item name="btn_login" type="id" />
+</resources>

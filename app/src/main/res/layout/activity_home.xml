@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/baseline_qr_code_scanner_24"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="58dp"
+        android:background="@color/app_color"
+        android:id="@+id/idVLogo"/>
+    <TextView
+        android:id="@+id/TVHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idVLogo"
+        android:layout_marginTop="28dp"
+        android:text="welcome to Qr code Scanner"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="28dp"
+        android:textStyle="bold"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_back"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:text="generate QR Code"
+        android:textAllCaps="false"
+        android:layout_below="@+id/TVHeading"
+        android:id="@+id/idbtnGenerateQR"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/button_back"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:text="Scan QR Code"
+        android:textAllCaps="false"
+        android:layout_below="@+id/idbtnGenerateQR"
+        android:id="@+id/idbtnScanQR"/>
+</RelativeLayout>
