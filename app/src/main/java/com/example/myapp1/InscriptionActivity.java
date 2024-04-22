@@ -1,5 +1,6 @@
 package com.example.myapp1;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,10 +13,11 @@ public class InscriptionActivity extends AppCompatActivity {
     private Spinner spinnerUserType;
     private Button btnRegister;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_inscription);
 
         // Initialize views
         spinnerUserType = findViewById(R.id.spinner_user_type);
@@ -32,7 +34,7 @@ public class InscriptionActivity extends AppCompatActivity {
 
         // Set onClick listener for the register button
         btnRegister.setOnClickListener(v -> {
-            Intent i = new Intent(InscriptionActivity.this, LoginActivity.class);
+            Intent i = new Intent(InscriptionActivity.this, MainActivity.class);
             startActivity(i);
             // Perform registration logic here
         });

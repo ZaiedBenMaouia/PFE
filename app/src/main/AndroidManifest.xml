@@ -23,13 +23,13 @@
             android:name=".GenerateQrcodeActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".InscriptionActivity"
             android:exported="false" />
         <activity
             android:name=".Qr_code"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
