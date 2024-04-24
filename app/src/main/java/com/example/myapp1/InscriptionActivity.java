@@ -34,7 +34,7 @@ public class InscriptionActivity extends AppCompatActivity {
 
         // Set onClick listener for the register button
         btnRegister.setOnClickListener(v -> {
-            Intent i = new Intent(InscriptionActivity.this, MainActivity.class);
+            Intent i = new Intent(InscriptionActivity.this, HomeActivity.class);
             startActivity(i);
             // Perform registration logic here
         });
