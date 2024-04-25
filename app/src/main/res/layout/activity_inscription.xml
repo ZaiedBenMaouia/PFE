@@ -121,7 +121,7 @@
                 android:id="@+id/spinner_user_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="100dp"
+                android:layout_margin="50dp"
                 android:entries="@array/user_types" />
 
             <Button

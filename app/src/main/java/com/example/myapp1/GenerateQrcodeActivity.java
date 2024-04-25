@@ -2,6 +2,8 @@ package com.example.myapp1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -25,6 +27,7 @@ public class GenerateQrcodeActivity extends AppCompatActivity {
     private QRGEncoder qrgEncoder;
     private Bitmap bitmap;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +62,10 @@ public class GenerateQrcodeActivity extends AppCompatActivity {
                             bitmap = qrgEncoder.encodeAsBitmap();
                             qrCodeTV.setVisibility(View.GONE);
                             qrCodeIV.setImageBitmap(bitmap);
+                            // Start the ResultActivity
+                            Intent intent = new Intent(GenerateQrcodeActivity.this, Qr_code.class);
+                            intent.putExtra("data", data); // Pass any data you want to the ResultActivity
+                            startActivity(intent);
 
                         } catch (WritePendingException e) {
                             e.printStackTrace();
