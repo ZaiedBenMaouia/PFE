@@ -74,6 +74,25 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:text="Connexion"/>
+
+         <!-- Générer un code QR -->    
+
+
+            <Button
+                android:id="@+id/btnGenerate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Générer QR Code"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:id="@+id/imageQRCode"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_below="@id/btnGenerate"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"/>
+
         </LinearLayout>
 
         <TextView
@@ -84,5 +103,6 @@
             android:text="Pas de compte ? S'inscrire."
             android:textColor="@color/color_color"
             android:textSize="16sp"/>
+
     </LinearLayout>
 </RelativeLayout>
