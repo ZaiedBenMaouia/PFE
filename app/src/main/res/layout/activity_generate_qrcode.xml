@@ -8,66 +8,23 @@
     style="@style/AppTheme.MaterialTheme"
     tools:context=".GenerateQrcodeActivity">
 
-    <FrameLayout
-        android:id="@+id/idFLqrcode"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="78dp">
+    <!-- Générer un code QR -->
 
-        <TextView
-            android:id="@+id/idTVGenerateQR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@color/white"
-            android:elevation="1dp"
-            android:padding="4dp"
-            android:text="your code will appear here"
-            android:textAllCaps="false"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="15sp" />
-
-        <ImageView
-            android:id="@+id/idIVQrcode"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:background="@color/white" />
-
-    </FrameLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/idTextInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/idFLqrcode"
-        android:layout_marginTop="28dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp"
-        android:hint="Add Txt"
-        android:padding="5dp"
-        app:hintTextColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@id/idFLqrcode"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/black" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/idTVGenerateQRButton"
-        android:layout_width="match_parent"
+        android:id="@+id/btnGenerate"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/idTextInputLayout"
-        android:layout_marginTop="18dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="18dp"
-        android:background="@drawable/button_back"
-        android:text="generate Qrcode"
-        android:textAllCaps="false" />
+        android:text="Générer QR Code"
+        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/imageQRCode"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@id/btnGenerate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
 
 </RelativeLayout>
