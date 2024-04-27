@@ -75,15 +75,24 @@
                 android:layout_margin="20dp"
                 android:text="Connexion"/>
 
-         <!-- Générer un code QR -->    
-
+         <!-- Générer un code QR (il faut le mettre dans activity_qr_code.xml)-->    
 
             <Button
                 android:id="@+id/btnGenerate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Générer QR Code"
+                android:text="Générer QR Code test"
                 android:layout_centerInParent="true"/>
+
+            <!-- Bouton pour le scan (il faut le mettre dans activity_scan_qrcode.xml)-->    
+    
+            <Button
+                android:id="@+id/scan_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scanner QR Code"
+                android:layout_gravity="center"
+                android:onClick="startQRScan" />       
 
             <ImageView
                 android:id="@+id/imageQRCode"
@@ -91,7 +100,7 @@
                 android:layout_height="200dp"
                 android:layout_below="@id/btnGenerate"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"/> 
 
         </LinearLayout>
 

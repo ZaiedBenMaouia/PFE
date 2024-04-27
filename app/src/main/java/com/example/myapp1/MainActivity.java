@@ -12,6 +12,8 @@ import android.graphics.Bitmap;
 import android.widget.Toast;
 
 import com.google.zxing.WriterException;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.google.zxing.BarcodeFormat;
 
@@ -21,7 +23,6 @@ public class MainActivity  extends AppCompatActivity {
     // deux bouton pour la gérération du code QR
     private Button btnGenerate;
     private ImageView imageQRCode;
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -49,7 +50,34 @@ public class MainActivity  extends AppCompatActivity {
             }
         });
     }
+    //Scenner le code QR (il faut la changer dans la classe ScanQrcodeActivity)
+    public void startQRScan(View view) {
+        // Initialiser le scanner de codes QR
+        IntentIntegrator integrator = new IntentIntegrator(this);
+        integrator.setOrientationLocked(false); // Si tu veux faire la rotation du camera (c est un Boolean)
+        integrator.setPrompt("Scannez un code QR");
+        integrator.initiateScan();
+    }
 
+    //Scenner le code QR (il faut la changer dans la classe ScanQrcodeActivity)
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // Récupérer le résultat du scan
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
+                // Si le scan est annulé
+                Toast.makeText(this, "Scan annulé", Toast.LENGTH_LONG).show();
+            } else {
+                // Si un code QR est détecté
+                String scannedData = result.getContents();
+                Toast.makeText(this, "Code QR détecté : " + scannedData, Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+    // Pour la génération du code QR (il faut la changer dans la classe GenerateQrcodeActivity)
     private void generateQRCode(String textToEncode) {
         BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
         try {
