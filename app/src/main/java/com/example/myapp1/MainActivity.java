@@ -17,12 +17,17 @@ import com.google.zxing.integration.android.IntentResult;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.google.zxing.BarcodeFormat;
 
-public class MainActivity  extends AppCompatActivity {
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
 
     // deux bouton pour la gérération du code QR
     private Button btnGenerate;
     private ImageView imageQRCode;
+
+    TextView signupTextView;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -34,6 +39,7 @@ public class MainActivity  extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         btnGenerate = findViewById(R.id.btnGenerate);
         imageQRCode = findViewById(R.id.imageQRCode);
+        signupTextView = findViewById(R.id.signup_textview);
 
         // Set onClick listener for the login button
         btnLogin.setOnClickListener(v -> {
@@ -49,7 +55,17 @@ public class MainActivity  extends AppCompatActivity {
                 generateQRCode("Mettre le texte ou le lien que tu veux générer!!!");
             }
         });
+
+        signupTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Rediriger vers l'activité d'inscription
+                Intent intent = new Intent(MainActivity.this, InscriptionActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
     //Scenner le code QR (il faut la changer dans la classe ScanQrcodeActivity)
     public void startQRScan(View view) {
         // Initialiser le scanner de codes QR
@@ -77,6 +93,7 @@ public class MainActivity  extends AppCompatActivity {
             }
         }
     }
+
     // Pour la génération du code QR (il faut la changer dans la classe GenerateQrcodeActivity)
     private void generateQRCode(String textToEncode) {
         BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
