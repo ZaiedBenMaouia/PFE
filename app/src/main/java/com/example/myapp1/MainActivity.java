@@ -21,13 +21,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin;
-
     // deux bouton pour la gérération du code QR
     private Button btnGenerate;
     private ImageView imageQRCode;
 
     TextView signupTextView;
-
 
     @SuppressLint("MissingInflatedId")
     @Override

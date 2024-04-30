@@ -15,9 +15,7 @@ public class InscriptionActivity extends AppCompatActivity {
 
     private Spinner spinnerUserType;
     private Button btnRegister;
-
     private ImageView connexionBtn;
-
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +26,6 @@ public class InscriptionActivity extends AppCompatActivity {
         spinnerUserType = findViewById(R.id.spinner_user_type);
         btnRegister = findViewById(R.id.btn_register);
         connexionBtn = findViewById(R.id.connexion_back_textview);
-
 
         // Setup spinner
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -45,7 +42,6 @@ public class InscriptionActivity extends AppCompatActivity {
             startActivity(i);
             // Perform registration logic here
         });
-
         connexionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
